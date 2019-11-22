@@ -59,8 +59,6 @@ $bannerText: black;
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  // grid-column-gap: 10px;
-  // grid-row-gap: 20px;
   grid-gap: 20px;
   text-align: center;
   padding-top: 50px;
@@ -93,5 +91,18 @@ $bannerText: black;
     width: 250px;
     height: 250px;
     font-size: 14px;
+  }
+}
+
+
+form.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  width: 200px;
+
+  input[name='text']{
+    width: 100%;
   }
 }

@@ -1,11 +1,8 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import moment from 'moment'
+import axios from 'axios'
 
-import './style.scss'
-
-
-class App extends React.Component {
+class Home extends React.Component {
 
   constructor(){
     super()
@@ -20,6 +17,8 @@ class App extends React.Component {
   }
 
   componentDidMount(){
+    axios.get('/api/wishes').then(res => console.log(res.data))
+
     this.interval = setInterval(() => {
       const now = moment()
       const timeLeft = moment.duration(this.melsBirthday.diff(now))
@@ -35,16 +34,10 @@ class App extends React.Component {
     clearInterval(this.interval)
   }
 
-
-
-
-
   render() {
     if (!this.state.days) return null
     return (
       <>
-
-
       <div className="page-wrapper">
         <div className="page">
           <div className="banner">
@@ -81,7 +74,4 @@ class App extends React.Component {
 
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+export default Home
