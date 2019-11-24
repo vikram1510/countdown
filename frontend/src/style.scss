@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Muli|Poppins&display=swap');
+@import 'animate';
 
 body, p { margin: 0}
 
@@ -18,6 +19,7 @@ body {
   color: white;
   font-family: 'Muli', sans-serif;
   font-weight: bold;
+  transition: 5s all;
 }
 
 
@@ -74,6 +76,7 @@ $bannerText: black;
     color: #ffffff;
     margin-bottom: 5px;
     font-size: 50px;
+    transition: 10s;
   }
 
   span {
@@ -99,10 +102,55 @@ form.message {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   height: 200px;
   width: 200px;
 
-  input[name='text']{
-    width: 100%;
+  input{
+    width: 60%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: black solid 2px;
+    outline: none;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    &::placeholder{
+      color: black;
+    }
   }
+
+  textarea{
+    resize: none;
+    border-radius: 2px;
+    border: 0;
+    width: 100%;
+    outline: none;
+    font-size: 0.8rem;
+    min-height: 3rem;
+    box-shadow: 2px 2px 5px 2px rgb(41, 41, 41);
+    padding: 5px;
+  }
+
+  button{
+    width: 50%;
+    background-color: royalblue;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 2px;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 5px;
+  }
+
+  p {
+    color: rgb(255, 106, 106);
+    font-size: 0.8rem;
+  }
+
+}
+
+.shake {
+  animation-name: shake;
+  animation-duration: 0.5s;
 }

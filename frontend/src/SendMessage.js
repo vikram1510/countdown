@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import TextArea from 'react-textarea-autosize'
 
 
 class SendMessage extends Component {
@@ -9,34 +10,42 @@ class SendMessage extends Component {
     this.state = {
       text: '',
       name: '',
-      sent: false
+      sent: false,
+      errors: {}
     }
   }
 
   onChange(e){
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.value, errors: {} })
   }
 
   onSubmit(e){
     e.preventDefault()
-    axios.post('/api/wishes', this.state.text)
+    axios.post('/api/wishes', { text: this.state.text, name: this.state.name })
       .then(() => this.setState({ sent: true }) )
-      .catch((err) => console.log(err.response.data))
+      .catch((err) => {
+        this.setState({ errors: err.response.data })
+        console.log(err.response.data)
+      })
   }
   render() {
     return (
       <div className="page-wrapper">
         <div className="page">
           <form onSubmit={(e) => this.onSubmit(e)} className="message">
-            <input
+            <TextArea
               name="text"
               onChange={(e) => this.onChange(e)}
+              placeholder="Your message"
             />
+            <p className="error">{this.state.errors.text}</p>
             <input
               name="name"
               onChange={(e) => this.onChange(e)}
+              placeholder="Your Name"
             />
-            <button className={this.state.sent ? 'sent' : ''}>Send</button>
+            <p className="error">{this.state.errors.name}</p>
+            <button className={this.state.sent ? 'sent' : ''}>SEND</button>
           </form>
         </div>
       </div>
