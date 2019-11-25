@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import Home from './Home'
 import SendMessage from './SendMessage'
+import Birthday from './Birthday'
 import './style.scss'
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/sendmessage' component={SendMessage} />
+        <Route path='/birthday' component={Birthday} />
       </Switch>
     </>
   </BrowserRouter>

@@ -1,0 +1,58 @@
+.animation-div{
+  background-image: url('https://media1.giphy.com/media/U3qYN8S0j3bpK/giphy.gif?cid=790b7611584c0b23cc5b13ab8b3a1bef5c71b98a55b7eb1f&rid=giphy.gif');
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    width: 100px;
+  }
+}
+
+.fadeOut {
+  animation-duration: 5s;
+}
+
+.fadeIn {
+  animation-duration: 8s;
+}
+
+h1.tada {
+  animation-name: tada;
+  animation-iteration-count: infinite;
+}
+
+.wishes-link.fadeInUp{
+  animation-delay: 5s;
+  animation-duration: 3s;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wishes-link > button {
+
+  font-size: 3rem;
+  background-color: transparent;
+  height: 80px;
+  width: 80px;
+  // border-radius: 100%;
+  background-color:rgba(128, 128, 128, 0.507);
+  border-right: 2px solid red;
+  border-left: 2px solid rgb(255, 251, 0);
+  border-bottom: 2px solid rgb(123, 255, 0);
+  border-top: 2px solid rgb(0, 174, 255);
+  &:hover {
+    font-size: 3rem;
+
+
+  }
+
+}

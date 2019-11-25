@@ -5,11 +5,13 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Muli|Poppins&display=swap');
 @import 'animate';
+@import 'birthday_animation';
 
 body, p { margin: 0}
 
 body {
   background-image: url('http://31.media.tumblr.com/0f3927f0017e84b9c6ec69901c5a825a/tumblr_n9lwm7N7VX1tz79vpo1_r1_1280.gif');
+  // background-image: url('https://media1.giphy.com/media/U3qYN8S0j3bpK/giphy.gif?cid=790b7611584c0b23cc5b13ab8b3a1bef5c71b98a55b7eb1f&rid=giphy.gif');
   // background-image: url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif');
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,7 +21,6 @@ body {
   color: white;
   font-family: 'Muli', sans-serif;
   font-weight: bold;
-  transition: 5s all;
 }
 
 
@@ -77,6 +78,9 @@ $bannerText: black;
     margin-bottom: 5px;
     font-size: 50px;
     transition: 10s;
+    &.animated{
+      color: red;
+    }
   }
 
   span {
