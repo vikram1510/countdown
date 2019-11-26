@@ -45,7 +45,7 @@ class SendMessage extends Component {
               placeholder="Your Name"
             />
             <p className="error">{this.state.errors.name}</p>
-            <button className={this.state.sent ? 'sent' : ''}>SEND</button>
+            <button className={this.state.sent ? 'sent' : ''}>SEND<i className="fas fa-gift"></i></button>
           </form>
         </div>
       </div>
