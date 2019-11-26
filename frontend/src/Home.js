@@ -15,13 +15,15 @@ class Home extends React.Component {
       fadeOut: false
       
     }
-    this.melsBirthday = moment('11/25/2019 00:04')
+    this.melsBirthday = moment('11/29/2019')
     this.counterInterval = null
   }
 
   componentDidMount(){
-    axios.get('/api/wishes').then(res => console.log(res.data))
 
+    if (this.melsBirthday.diff(moment()) < 0) this.props.history.push('/birthday')
+
+    axios.get('/api/wishes').then(res => console.log(res.data))
     this.counterInterval = setInterval(() => {
       const now = moment()
       const timeLeft = moment.duration(this.melsBirthday.diff(now))
@@ -62,6 +64,7 @@ class Home extends React.Component {
             <h1>
               {'MEL\'S BIRTHDAY COUNTDOWN'}
             </h1>
+            <i className="fas fa-birthday-cake"></i>
           </div>
           <div className="countdown-grid">
             <div className={this.setFadeOut('')}>
