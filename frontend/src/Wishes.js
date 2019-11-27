@@ -28,7 +28,12 @@ class Wishes extends React.Component {
           {this.state.wishes.map( (wish, i) => (
             <div key={i} className="wish">
               <p>{wish.text}</p>
-              <h4>{'- ' + wish.name}</h4>
+              <div className="wish-info">
+                <h4>{'- ' + wish.name}</h4>
+                <h3
+                  className={wish.is_sent ? 'wish-sent' : ''}
+                ><i className="far fa-check-circle"></i></h3>
+              </div>
             </div>
           ))}
         </div>

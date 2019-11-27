@@ -11,7 +11,7 @@
   }
 }
 
-h4 { margin: 0;}
+h4,h3 { margin: 0;}
 
 .wish {
   
@@ -29,11 +29,22 @@ h4 { margin: 0;}
     margin-bottom: 10px;
   }
 
-  h4 {
+  .wish-info {
     background: rgba(0, 0, 0, 0.281);
     padding: 5px 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      color: gray;
+    }
+
+    h3.wish-sent{
+      color: rgb(2, 184, 2);
+    }
   }
+
 
 }
