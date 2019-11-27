@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import melCartoon from './assets/mel-cartoon.png'
 
 class Birthday extends React.Component {
 
@@ -9,8 +9,14 @@ class Birthday extends React.Component {
       <div className="animation-div animated fadeIn">
         <h1 className="animated tada infinite">HAPPY BIRTHDAY MEL</h1>
         <div className="wishes-link animated fadeInUp">
-          <p>Click the button to see your birthday wishes</p>
-          <Link to="/wishes"><button>👸🏽</button></Link>
+          
+          {/* <img src={melCartoon} alt='cartoon mel'/> */}
+          {/* <Link to="/wishes"><button>👸🏽</button></Link> */}
+          <Link to="/wishes">
+            <img src={melCartoon} alt='cartoon mel'/>
+          </Link>
+          <hr/>
+          <p>Click your face to see your birthday wishes</p>
         </div>
       </div>
     )
