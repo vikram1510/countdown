@@ -6,3 +6,4 @@ class WishSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wish
         fields = '__all__'
+        extra_kwargs = { 'id': { 'required': False }} 
