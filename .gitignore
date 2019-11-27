@@ -1,1 +1,4 @@
 frontend/dist
+**__pycache__**
+.vscode/*
+*.pyc

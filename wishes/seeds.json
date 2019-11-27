@@ -1,0 +1,58 @@
+[
+{
+  "model": "wishes.wish",
+  "pk": 1,
+  "fields": {
+    "text": "Happy birthday stinky ass",
+    "name": "Vik"
+  }
+},
+{
+  "model": "wishes.wish",
+  "pk": 2,
+  "fields": {
+    "text": "happy 25th",
+    "name": "bhu1"
+  }
+},
+{
+  "model": "wishes.wish",
+  "pk": 3,
+  "fields": {
+    "text": "bla",
+    "name": "lala"
+  }
+},
+{
+  "model": "wishes.wish",
+  "pk": 4,
+  "fields": {
+    "text": "ddad",
+    "name": "dadda"
+  }
+},
+{
+  "model": "wishes.wish",
+  "pk": 5,
+  "fields": {
+    "text": "ddad",
+    "name": "dadda"
+  }
+},
+{
+  "model": "wishes.wish",
+  "pk": 6,
+  "fields": {
+    "text": "Hello testing",
+    "name": "Anonymous"
+  }
+},
+{
+  "model": "wishes.wish",
+  "pk": 7,
+  "fields": {
+    "text": "Hello testing",
+    "name": "Anonymous"
+  }
+}
+]
