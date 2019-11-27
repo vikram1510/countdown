@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli|Poppins&display=swap');
 @import 'animate';
 @import 'birthday_animation';
+@import 'wishes';
 
 body, p { margin: 0}
 
@@ -112,7 +113,7 @@ form.message {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 200px;
+  height: 300px;
   width: 200px;
 
   input{
@@ -150,10 +151,26 @@ form.message {
     border: 2px solid white;
     color: white;
     padding: 10px 5px;
+    &.sent{
+      background-color: rgb(52, 185, 59);
+
+    }
     i {
       padding-left: 10px;
     }
+
+    }
+
+    .link-to-wishes {
+      padding: 10px;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      a {
+        color: white;
+        text-decoration: none;
+      }
   }
+
 
   p {
     color: rgb(255, 106, 106);

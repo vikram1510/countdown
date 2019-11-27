@@ -37,7 +37,7 @@ h1.tada {
   justify-content: space-around;
 }
 
-.wishes-link > button {
+.wishes-link button {
 
   font-size: 3rem;
   background-color: transparent;
@@ -49,10 +49,9 @@ h1.tada {
   border-left: 2px solid rgb(255, 251, 0);
   border-bottom: 2px solid rgb(123, 255, 0);
   border-top: 2px solid rgb(0, 174, 255);
+
   &:hover {
     font-size: 3rem;
-
-
   }
 
 }
