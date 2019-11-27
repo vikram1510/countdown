@@ -7,7 +7,9 @@
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve:frontend": "webpack-dev-server",
-    "serve:backend": "python manage.py runserver 4000"
+    "serve:backend": "python manage.py runserver 4000",
+    "serve:front-dev": "webpack-dev-server --mode=development",
+    "serve:back-dev": "python manage.py runserver"
   },
   "heroku-run-build-script": true,
   "author": "",

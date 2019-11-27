@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Indie+Flower&display=swap');
+
+.wishes-wrapper {
+  background-image: url('http://31.media.tumblr.com/0f3927f0017e84b9c6ec69901c5a825a/tumblr_n9lwm7N7VX1tz79vpo1_r1_1280.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  > h1 {
+    text-align: center;
+  }
+}
+
+h4 { margin: 0;}
+
+.wish {
+  
+  margin: 0 20px;
+  background: rgba(0, 0, 0, 0.281);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  
+  p {
+    // font-family: 'Indie Flower', cursive;
+    font-family: 'Caveat', cursive;
+    // font-family: 'Gloria Hallelujah', cursive;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    background: rgba(0, 0, 0, 0.281);
+    padding: 5px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+}

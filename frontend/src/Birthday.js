@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 class Birthday extends React.Component {
@@ -9,7 +10,7 @@ class Birthday extends React.Component {
         <h1 className="animated tada infinite">HAPPY BIRTHDAY MEL</h1>
         <div className="wishes-link animated fadeInUp">
           <p>Click the button to see your birthday wishes</p>
-          <button>👸🏽</button>
+          <Link to="/wishes"><button>👸🏽</button></Link>
         </div>
       </div>
     )
