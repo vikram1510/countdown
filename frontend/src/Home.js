@@ -77,7 +77,7 @@ class Home extends React.Component {
     if (!this.state.days) return null
     return (
       <>
-      <div className="page-wrapper">
+      <div className={this.setFadeOut('page-wrapper')}>
         <form 
           onSubmit={e => this.onSubmit(e)}
           className={`header ${this.state.codeDenied ? 'error' : this.state.codeConfirmed || Auth.isItMel() ? 'confirmed' : ''}`}

@@ -3,6 +3,7 @@ import axios from 'axios'
 import TextArea from 'react-textarea-autosize'
 import { Link } from 'react-router-dom'
 import Auth from './lib/auth'
+import MelAnimation from './assets/mel-animation.gif'
 
 class Wishes extends React.Component {
 
@@ -69,7 +70,10 @@ class Wishes extends React.Component {
   render(){
     if (!this.state.wishes) return (
       <>
-      <h1 className="messages-loading">Sending Messages to your phone</h1>
+      <div className="page-wrapper">
+        <h1 className="messages-loading">Sending Messages to your phone...</h1>
+        <img src={MelAnimation}></img>
+      </div>
       </>
     )
     return (
