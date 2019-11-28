@@ -16,8 +16,8 @@ const App = () => (
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/sendmessage' component={SendMessage} />
-        <SecureRoute path='/birthday' component={Birthday} />
-        <SecureRoute path='/wishes' component={Wishes} />
+        <Route path='/birthday' component={Birthday} />
+        <Route path='/wishes' component={Wishes} />
         <Route path='/isItMel' component={IsItMel} />
       </Switch>
     </>

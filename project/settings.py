@@ -33,6 +33,7 @@ SECRET_KEY = env('SECRET_KEY')
 TWILIO_ACCOUNT_SID = env('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = env('TWILIO_AUTH_TOKEN')
 TWILIO_FROM = env('TWILIO_FROM')
+MELS_NUMBER = env('MELS_NUMBER')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

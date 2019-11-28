@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import TextArea from 'react-textarea-autosize'
+import { Link } from 'react-router-dom'
+import Auth from './lib/auth'
 
 class Wishes extends React.Component {
 
@@ -11,7 +13,7 @@ class Wishes extends React.Component {
     }
   }
 
-  componentDidMount(){
+  getAllWishes(){
     axios.get('/api/wishes')
       .then(res => {
         const wishes = res.data.map(wish => {
@@ -19,7 +21,17 @@ class Wishes extends React.Component {
         })
         this.setState({ wishes })
       })
-      .catch(err => console.log(err.response.data))
+  }
+
+  componentDidMount(){
+
+    if (Auth.isItMel()) {
+      axios.post('/api/sendall')
+        .then(() => this.getAllWishes())
+        .catch(err => console.log(err.response.data))
+    } else {
+      this.getAllWishes()
+    }
   }
 
   handleChange(e, selectedWish){
@@ -55,11 +67,17 @@ class Wishes extends React.Component {
   }
 
   render(){
-    if (!this.state.wishes) return null
-
+    if (!this.state.wishes) return (
+      <>
+      <h1 className="messages-loading">Sending Messages to your phone</h1>
+      </>
+    )
     return (
       <div className="wishes-wrapper">
-        <h1>All Wishes</h1>
+        <div className="wishes-header">
+          <h1>All Wishes</h1>
+          <Link to="/sendmessage"><button>Add Wish</button></Link>
+        </div>
         <div className="wishes">
           {this.state.wishes.map( (wish, i) => (
             <div key={i} className="wish">

@@ -50,10 +50,10 @@ class SendAllSMS(APIView):
         for wish in wishes:
             try:
                 # TwilioSmsSender(wish.text, '07940795300').send_sms()
-                text_body = f'from: {wish.name}\n\n {wish.text}'
-                TwilioSmsSender(text_body, '07940795300').send_sms()
+                text_body = f'from: {wish.name}\n\n{wish.text}'
+                TwilioSmsSender(text_body, settings.MELS_NUMBER).send_sms()
                 wish.is_sent = True
-                #wish.save()
+                wish.save()
             except Exception as ex:
                 return Response({'message': 'sms not sent', 'info': str(ex)}, status=402)
         return Response({'message': 'All messages sent'})

@@ -21,7 +21,7 @@ class IsItMel extends React.Component {
   onClick() {
     Auth.setToken(this.state.code)
     if (Auth.isItMel()) {
-      this.props.history.push('/wishes')
+      this.props.history.go(-1)
     }
   }
 

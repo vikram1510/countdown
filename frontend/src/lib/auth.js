@@ -19,6 +19,10 @@ class Auth {
 
     return checkToken === 'mel25th'
   }
+
+  static verifyCode(code){
+    return code === '1510'
+  }
 }
 
 export default Auth

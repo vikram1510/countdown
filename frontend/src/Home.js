@@ -1,6 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 import axios from 'axios'
+import Auth from './lib/auth'
+import { verify } from 'crypto'
 
 class Home extends React.Component {
 
@@ -12,7 +14,10 @@ class Home extends React.Component {
       minutes: null,
       seconds: null,
       numberAnimation: '',
-      fadeOut: false
+      fadeOut: false,
+      melCode: '',
+      codeDenied: false,
+      codeConfirmed: false
       
     }
     this.melsBirthday = moment('11/29/2019')
@@ -54,11 +59,44 @@ class Home extends React.Component {
     return `${this.state.fadeOut ? 'animated fadeOut ' + original : original}`
   }
 
+  onSubmit(e){
+    e.preventDefault()
+    if (Auth.verifyCode(this.state.melCode)) {
+      Auth.setToken('mel25th')
+      this.setState({ codeConfirmed: true })
+    } else {
+      this.setState({ codeDenied: true, melCode: '' })
+    }
+  }
+
+  onChange(e){
+    this.setState({ melCode: e.target.value, codeDenied: false, codeConfirmed: false })
+  }
+
   render() {
     if (!this.state.days) return null
     return (
       <>
       <div className="page-wrapper">
+        <form 
+          onSubmit={e => this.onSubmit(e)}
+          className={`header ${this.state.codeDenied ? 'error' : this.state.codeConfirmed || Auth.isItMel() ? 'confirmed' : ''}`}
+        >
+          {!Auth.isItMel() &&
+          <input
+            placeholder="Mel Verification"
+            type="number"
+            className="input"
+            onChange={e => this.onChange(e)}
+            value={this.state.melCode}
+          ></input>
+          }
+          <button 
+            disabled={this.state.codeConfirmed || Auth.isItMel()}
+          >
+            {this.state.codeDenied ? 'WRONG' : this.state.codeConfirmed || Auth.isItMel() ? 'CONFIRMED AS MEL' : 'CONFIRM'}
+          </button>
+        </form>
         <div className="page">
           <div className={this.setFadeOut('banner')}>
             <h1>

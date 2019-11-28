@@ -1,13 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Indie+Flower&display=swap');
 
+.messages-loading {
+  text-align: center;
+}
+
 .wishes-wrapper {
   background-image: url('http://31.media.tumblr.com/0f3927f0017e84b9c6ec69901c5a825a/tumblr_n9lwm7N7VX1tz79vpo1_r1_1280.gif');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  > h1 {
-    text-align: center;
+  div.wishes-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    margin-left: 20px;
+    background-color: royalblue;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 2px;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 5px;
   }
 }
 
