@@ -20,13 +20,28 @@ h4,h3 { margin: 0;}
   margin-bottom: 20px;
   border-radius: 10px;
   
-  p {
+  textarea {
     // font-family: 'Indie Flower', cursive;
     font-family: 'Caveat', cursive;
-    // font-family: 'Gloria Hallelujah', cursive;
+    min-height: 100%;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    border: 0;
+    resize: none;
     padding: 5px 10px;
+    // font-family: 'Gloria Hallelujah', cursive;
     font-size: 1.3rem;
     margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin:0;
+
+    &:focus{
+      background-color: rgba(0, 0, 0, 0.452);
+
+    }
   }
 
   .wish-info {
@@ -37,13 +52,35 @@ h4,h3 { margin: 0;}
     display: flex;
     justify-content: space-between;
 
-    h3 {
-      color: gray;
+    div.wish-icons{
+      display: flex;
+      align-items: center;
     }
 
-    h3.wish-sent{
-      color: rgb(2, 184, 2);
+    i:not(.fa-check-circle) {
+      color: white;
+      font-size: 0.8rem;
+      background-color: rgb(88, 87, 87);
+      padding: 5px;
+      border-radius: 5px;
+      margin-right: 5px;
+      cursor: pointer;
+      border: 1px solid gray;
+      
+      // box-shadow: 0 0 2px 2px gray;
     }
+    i.save {
+      font-size: 0.6rem;
+      background-color: royalblue;
+      border:0;
+    }
+
+    i.fa-check-circle{
+      margin-left: 10px;
+      color: gray;
+      &.wish-sent{color: rgb(2, 184, 2);}
+    }
+    
   }
 
 

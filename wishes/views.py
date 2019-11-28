@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from twilio.rest import Client
@@ -59,6 +59,11 @@ class SendAllSMS(APIView):
         return Response({'message': 'All messages sent'})
 
 class WishesIndex(ListCreateAPIView):
+    queryset = Wish.objects.all().order_by('-id')
+    serializer_class = WishSerializer
+
+
+class WishesDetail(RetrieveUpdateDestroyAPIView):
     queryset = Wish.objects.all()
     serializer_class = WishSerializer
 
