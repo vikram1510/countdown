@@ -59,7 +59,7 @@ class SendAllSMS(APIView):
         return Response({'message': 'All messages sent'})
 
 class WishesIndex(ListCreateAPIView):
-    queryset = Wish.objects.all().order_by('-id')
+    queryset = Wish.objects.all().order_by('id')
     serializer_class = WishSerializer
 
 
