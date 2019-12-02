@@ -28,12 +28,12 @@ class Home extends React.Component {
 
     if (this.melsBirthday.diff(moment()) < 0) this.props.history.push('/birthday')
 
-    axios.get('/api/wishes').then(res => console.log(res.data))
+    // axios.get('/api/wishes').then(res => console.log(res.data))
     this.counterInterval = setInterval(() => {
       const now = moment()
       const timeLeft = moment.duration(this.melsBirthday.diff(now))
       const totalSeconds = timeLeft.asSeconds()
-      console.log(this.melsBirthday.diff(now, 'days'))
+      // console.log(this.melsBirthday.diff(now, 'days'))
       const days = String(this.melsBirthday.diff(now, 'days'))
       const hours = String(timeLeft.hours()).padStart(2, 0)
       const seconds = String(timeLeft.seconds()).padStart(2, 0)
