@@ -20,7 +20,7 @@ class Home extends React.Component {
       codeConfirmed: false
       
     }
-    this.melsBirthday = moment('11/29/2019')
+    this.melsBirthday = moment('11/29/2020')
     this.counterInterval = null
   }
 
@@ -33,7 +33,8 @@ class Home extends React.Component {
       const now = moment()
       const timeLeft = moment.duration(this.melsBirthday.diff(now))
       const totalSeconds = timeLeft.asSeconds()
-      const days = String(timeLeft.days()).padStart(2, 0)
+      console.log(this.melsBirthday.diff(now, 'days'))
+      const days = String(this.melsBirthday.diff(now, 'days'))
       const hours = String(timeLeft.hours()).padStart(2, 0)
       const seconds = String(timeLeft.seconds()).padStart(2, 0)
       const minutes = String(timeLeft.minutes()).padStart(2, 0)
